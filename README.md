@@ -3,7 +3,15 @@
 ## 1. Create and activate env
 
 ```bash
-python -m venv agent_env
+sudo apt install python3.11
+```
+
+```bash
+sudo apt install python3.11-venv
+```
+
+```bash
+python3.11 -m venv agent_env
 ```
 
 ```bash
