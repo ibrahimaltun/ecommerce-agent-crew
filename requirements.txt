@@ -1,3 +1,5 @@
 langgraph
 langchain-ollama
 pydantic
+rich
+pytest
