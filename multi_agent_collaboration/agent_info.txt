@@ -1,0 +1,27 @@
+1. Developer Agent (Geliştirici):
+- Kullanıcı isterine göre kodu yazar veya Reviewer'dan gelen eleştiriler doğrultusunda
+kodu günceller (Code Refactoring / Bug Fixing).
+
+2. Code Reviewer Agent (Kod İnceleyici):
+- Yazılan kodu güvenlik, performans, okunabilirlik ve işlevsellik açısından denetler.
+Kod kusursuzsa onay verir (Approval), eksik varsa somut geri bildirimler (Feedback)
+sunarak kodu Developer'a geri gönderir.
+
+
+# ----------------------------------------------------------
+
+Çoklu Agent Mimarisinin Temel Terimleri:
+
+- Peer Review Pattern (Akran Denetimi Mimarisi): Çıktının son kullanıcıya sunulmadan
+önce başka bir uzman agent tarafından denetlenip onaylanması süreci.
+
+- Structured Output (Yapısallaştırılmış Çıktı): Reviewer'ın kararlarını (Onay Durumu
+ve Eleştiriler) Pydantic şeması kullanarak garanti altına alınmış JSON formatında
+döndürmesi.
+
+- Max Iterations / Recursion Limit (Maksimum Döngü Sınırı): Local modellerin sonsuz
+bir tartışma döngüsüne (Infinite Debate Loop) girmesini engelleyen güvenlik barajı.
+
+
+# ----------------------------------------------------------
+
