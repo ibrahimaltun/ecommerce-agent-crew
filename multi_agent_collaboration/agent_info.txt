@@ -24,4 +24,34 @@ bir tartışma döngüsüne (Infinite Debate Loop) girmesini engelleyen güvenli
 
 
 # ----------------------------------------------------------
+# code_gen_and_test_agent.py module architecture
+# ----------------------------------------------------------
+
+[Developer Node] ──> [Tester Node (Subprocess / PyTest)] 
+                           │
+             ┌─────────────┴─────────────┐
+        (Test Başarısız)            (Test Başarılı)
+             │                           │
+             ▼                           ▼
+     [Developer'a Dön]           [Reviewer Node]
+                                         │
+                           ┌─────────────┴─────────────┐
+                      (Revizyon)                     (Onay)
+                           │                           │
+                           ▼                           ▼
+                   [Developer'a Dön]                 [END]
+
+
+# Detail Concepts
+1. Dynamic Code Execution (Dinamik Kod Çalıştırma): Developer'ın ürettiği kodun sanal ortamda geçici bir
+dosyaya (.py) yazılması ve local terminal üzerinden subprocess ile tetiklenmesi.
+
+2. Traceback Capture (Hata Dökümü Yakalama): Testlerin kalması veya kodun SyntaxError / RuntimeError
+vermesi durumunda oluşan terminal çıktısının (stdout/stderr) okunup Developer'a hata geri bildirimi
+olarak beslenmesi.
+
+3. Execution Sandbox (Çalıştırma Kum Havuzu): Test dosyasının izole bir dizinde oluşturulup işlem bitince
+temizlenmesi.
+
+# ----------------------------------------------------------
 
